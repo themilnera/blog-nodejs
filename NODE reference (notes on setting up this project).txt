@@ -1,0 +1,51 @@
+NODE steps 
+
+INITIALIZE PROJECT DIRECTORY
+npm init --yes
+
+INSTALL PACKAGES
+npm install -D nodemon
+(such as)
+npm install express mongoose connect-mongo cookie-parser dotenv ejs express-ejs-layouts express-session jsonwebtoken method-override bcrypt
+
+SETUP
+.env, gitignore
+
+package.json
+	"scripts"
+		"start": "node app.js"
+		"dev": "nodemon app.js"
+
+	//creates your start commands
+
+app.js
+	import dotenv
+	
+	import express (make object of it)
+	const express = require("express");
+	const app = express();
+	
+	app.get("/", (req, res)=>{
+		res.send("hello world");
+	});
+
+	app.listen(PORT, ()=>{
+		console.log(`server running on port ${PORT}`);
+	});
+
+
+DIRECTORY STRUCTURE (For this project)
+
+server
+	config
+	models
+	routes
+
+public
+	css
+	img
+	js
+
+views
+	layouts
+	partials
